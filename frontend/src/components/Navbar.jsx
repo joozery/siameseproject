@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -72,8 +73,9 @@ const Navbar = () => {
             ))}
             
             {/* Login Button */}
-            <button 
-              className="border-2 border-yellow-400 text-black hover:bg-yellow-400 hover:text-black transition duration-300"
+            <Link 
+              to="/login"
+              className="border-2 border-yellow-400 text-black hover:bg-yellow-400 hover:text-black transition duration-300 inline-block"
               style={{
                 fontFamily: 'Metamorphous',
                 fontSize: '16px',
@@ -82,11 +84,12 @@ const Navbar = () => {
                 lineHeight: 'normal',
                 padding: '8px 24px',
                 borderRadius: '25px',
-                background: 'transparent'
+                background: 'transparent',
+                textDecoration: 'none'
               }}
             >
               LOGIN
-            </button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -140,8 +143,9 @@ const Navbar = () => {
                 {item.name}
               </a>
             ))}
-            <button 
-              className="w-full text-center border-2 border-yellow-400 text-black hover:bg-yellow-400 hover:text-black transition duration-300 mt-2"
+            <Link 
+              to="/login"
+              className="w-full text-center border-2 border-yellow-400 text-black hover:bg-yellow-400 hover:text-black transition duration-300 mt-2 block"
               style={{
                 fontFamily: 'Metamorphous',
                 fontSize: '16px',
@@ -150,11 +154,13 @@ const Navbar = () => {
                 lineHeight: 'normal',
                 padding: '8px 24px',
                 borderRadius: '25px',
-                background: 'transparent'
+                background: 'transparent',
+                textDecoration: 'none'
               }}
+              onClick={() => setIsMenuOpen(false)}
             >
               LOGIN
-            </button>
+            </Link>
           </div>
         </div>
       )}

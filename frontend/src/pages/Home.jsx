@@ -4,9 +4,11 @@ import HeroSection from '../components/HeroSection';
 import ActionButtonsSection from '../components/ActionButtonsSection';
 import NewStatsSection from '../components/NewStatsSection';
 import WhySiamSection from '../components/WhySiamSection';
-import CTASection from '../components/CTASection';
 import HomeAnimations from '../components/HomeAnimations';
 import Footer from '../components/Footer';
+import SponsorSection from '../components/SponsorSection';
+import GallerySection from '../components/GallerySection';
+import LatestUpdatesSection from '../components/LatestUpdatesSection';
 
 const Home = () => {
   return (
@@ -17,7 +19,9 @@ const Home = () => {
                   <ActionButtonsSection />
                   <NewStatsSection />
                   <WhySiamSection />
-                  <CTASection />
+                  <LatestUpdatesSection />
+                  <GallerySection />
+                  <SponsorSection />
                   <Footer />
     </div>
   );

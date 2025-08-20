@@ -35,7 +35,7 @@ const WhySiamSection = () => {
           </div>
 
           {/* Right Side - Content */}
-          <div className="lg:w-1/2 space-y-6">
+          <div className="lg:w-1/2 space-y-6 flex flex-col items-center text-center w-full" style={{ maxWidth: '760px' }}>
             <h2 
               className="text-4xl md:text-5xl font-bold"
               style={{
@@ -49,33 +49,63 @@ const WhySiamSection = () => {
             <p 
               className="text-lg text-gray-800 leading-relaxed"
               style={{
-                fontFamily: 'Arial, sans-serif'
+                fontFamily: 'Futura'
               }}
             >
               Experience the heart of Southeast Asian cinema and entertainment industry.
             </p>
-            
+
             <p 
               className="text-lg text-gray-800 leading-relaxed"
               style={{
-                fontFamily: 'Arial, sans-serif'
+                fontFamily: 'Futura'
               }}
             >
               Bangkok serves as the perfect gateway to explore emerging markets, forge international partnerships, and discover the next wave of creative talent from Asia and beyond.
             </p>
             
             {/* Call to Action Button */}
-            <div className="relative inline-block">
-              <button 
-                className="px-8 py-4 bg-yellow-400 text-black font-bold uppercase tracking-wide hover:bg-yellow-500 transition-colors duration-300 flex items-center space-x-2 rounded-lg shadow-md"
+            <div className="relative inline-block self-center">
+              <button
+                className="relative transition-transform duration-200 hover:-translate-y-0.5"
                 style={{
-                  fontFamily: 'Futura'
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  height: '44px',
+                  padding: '0 28px',
+                  paddingRight: '64px',
+                  gap: '8px',
+                  borderRadius: '12px',
+                  background: '#F9C712',
+                  color: '#FFFFFF',
+                  fontFamily: 'Futura',
+                  fontWeight: 700,
+                  fontSize: '18px',
+                  letterSpacing: '0.02em',
+                  boxShadow: '0 6px 16px rgba(0,0,0,0.18)'
                 }}
               >
-                <span>LEARN MORE</span>
-                <svg className="w-4 h-4" fill="black" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                </svg>
+                LEARN MORE
+                <span
+                  className="absolute top-1/2 -translate-y-1/2"
+                  style={{
+                    right: '-18px',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    width: '36px',
+                    height: '36px',
+                    borderRadius: '9999px',
+                    background: '#F9C712',
+                    boxShadow: '0 6px 16px rgba(0,0,0,0.18)'
+                  }}
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 17L17 7" stroke="#000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M8 7H17V16" stroke="#000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </span>
               </button>
             </div>
           </div>
