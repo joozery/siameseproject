@@ -166,7 +166,7 @@ const Login = () => {
               >
                 Don't have an account yet?{' '}
                 <Link
-                  to="/register"
+                  to="/signup"
                   className="font-medium text-gray-900 underline hover:text-gray-700"
                   style={{ fontFamily: 'Futura' }}
                 >
@@ -180,7 +180,7 @@ const Login = () => {
 
       {/* Right Side - Background Image with Logo */}
       <div 
-        className="hidden lg:block relative flex-1"
+        className="hidden lg:block relative flex-1 m-4 rounded-3xl overflow-hidden"
         style={{
           backgroundImage: `url(${bgLogin})`,
           backgroundSize: 'cover',
@@ -194,22 +194,8 @@ const Login = () => {
             <img 
               src={logoUnion} 
               alt="Siamese FilmArt Logo" 
-              className="w-32 h-auto mb-4 mx-auto"
+              className="w-48 h-auto mx-auto"
             />
-            <div className="text-white">
-              <h1 
-                className="text-4xl font-bold mb-2"
-                style={{ fontFamily: 'Metamorphous' }}
-              >
-                SIAMESE
-              </h1>
-              <h2 
-                className="text-2xl font-bold"
-                style={{ fontFamily: 'Metamorphous' }}
-              >
-                FILMART
-              </h2>
-            </div>
           </div>
         </div>
       </div>
