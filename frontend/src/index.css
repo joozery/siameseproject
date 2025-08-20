@@ -1,0 +1,33 @@
+/* Import Metamorphous font */
+@import url('https://fonts.googleapis.com/css2?family=Metamorphous&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS Variables */
+:root {
+  --mainyell1: #F9C712;
+  --white1: #FFF;
+  --brandWidth: 160px; /* Shared width for navbar logo and poster */
+  --posterWidth: 320px; /* Independent width for poster */
+}
+
+/* Custom styles */
+body {
+  margin: 0;
+  font-family: 'Metamorphous', serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Hide scrollbar */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+* {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
