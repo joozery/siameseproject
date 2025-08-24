@@ -11,7 +11,7 @@ const HeroSection = () => {
                     <section 
                   className="relative h-[95vh] flex items-center bg-cover bg-center bg-no-repeat"
                   style={{
-                    backgroundImage: "url('/src/assets/teeyod.jpg')",
+                    backgroundImage: "url('/assets/teeyod.jpg')",
                     backgroundSize: 'cover',
                     backgroundPosition: 'center'
                   }}

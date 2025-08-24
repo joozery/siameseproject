@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import bgLogin from '../assets/bglogin.jpg';
-import logoUnion from '../assets/Union.png';
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -182,7 +180,7 @@ const Login = () => {
       <div 
         className="hidden lg:block relative flex-1 m-4 rounded-3xl overflow-hidden"
         style={{
-          backgroundImage: `url(${bgLogin})`,
+          backgroundImage: `url('/assets/bglogin.jpg')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
@@ -192,7 +190,7 @@ const Login = () => {
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center">
             <img 
-              src={logoUnion} 
+              src="/assets/Union.png" 
               alt="Siamese FilmArt Logo" 
               className="w-48 h-auto mx-auto"
             />

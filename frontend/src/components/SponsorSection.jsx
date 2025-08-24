@@ -1,22 +1,16 @@
 import React from 'react';
-import sponsor1 from '../assets/sponsor/1.jpg';
-import sponsor2 from '../assets/sponsor/2.png';
-import sponsor3 from '../assets/sponsor/3.webp';
-import sponsor4 from '../assets/sponsor/4.png';
-import sponsor5 from '../assets/sponsor/5.webp';
-import sponsor6 from '../assets/sponsor/6.jpg';
 
 const sponsors = [
-  { id: 1, image: sponsor1, name: 'Sponsor 1' },
-  { id: 2, image: sponsor2, name: 'Sponsor 2' },
-  { id: 3, image: sponsor3, name: 'Sponsor 3' },
-  { id: 4, image: sponsor4, name: 'Sponsor 4' },
-  { id: 5, image: sponsor5, name: 'Sponsor 5' },
-  { id: 6, image: sponsor6, name: 'Sponsor 6' },
+  { id: 1, image: '/assets/sponsor/1.jpg', name: 'Sponsor 1' },
+  { id: 2, image: '/assets/sponsor/2.png', name: 'Sponsor 2' },
+  { id: 3, image: '/assets/sponsor/3.webp', name: 'Sponsor 3' },
+  { id: 4, image: '/assets/sponsor/4.png', name: 'Sponsor 4' },
+  { id: 5, image: '/assets/sponsor/5.webp', name: 'Sponsor 5' },
+  { id: 6, image: '/assets/sponsor/6.jpg', name: 'Sponsor 6' },
   // Add placeholders to fill the grid
-  { id: 7, image: sponsor1, name: 'Sponsor 7' },
-  { id: 8, image: sponsor2, name: 'Sponsor 8' },
-  { id: 9, image: sponsor3, name: 'Sponsor 9' }
+  { id: 7, image: '/assets/sponsor/1.jpg', name: 'Sponsor 7' },
+  { id: 8, image: '/assets/sponsor/2.png', name: 'Sponsor 8' },
+  { id: 9, image: '/assets/sponsor/3.webp', name: 'Sponsor 9' }
 ];
 
 const SponsorSection = () => {

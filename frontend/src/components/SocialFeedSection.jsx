@@ -6,49 +6,49 @@ const SocialFeedSection = () => {
     {
       id: 1,
       platform: 'instagram',
-      image: '/src/assets/gallery/1.jpg',
+      image: '/assets/gallery/1.jpg',
       height: 'h-48'
     },
     {
       id: 2,
       platform: 'instagram',
-      image: '/src/assets/gallery/2.jpg',
+      image: '/assets/gallery/2.jpg',
       height: 'h-64'
     },
     {
       id: 3,
       platform: 'instagram',
-      image: '/src/assets/gallery/3.jpeg',
+      image: '/assets/gallery/3.jpeg',
       height: 'h-48'
     },
     {
       id: 4,
       platform: 'facebook',
-      image: '/src/assets/gallery/4.jpg',
+      image: '/assets/gallery/4.jpg',
       height: 'h-56'
     },
     {
       id: 5,
       platform: 'instagram',
-      image: '/src/assets/gallery/5.jpg',
+      image: '/assets/gallery/5.jpg',
       height: 'h-40'
     },
     {
       id: 6,
       platform: 'youtube',
-      image: '/src/assets/gallery/6.jpeg',
+      image: '/assets/gallery/6.jpeg',
       height: 'h-64'
     },
     {
       id: 7,
       platform: 'instagram',
-      image: '/src/assets/gallery/7.jpeg',
+      image: '/assets/gallery/7.jpeg',
       height: 'h-52'
     },
     {
       id: 8,
       platform: 'instagram',
-      image: '/src/assets/gallery/8.jpg',
+      image: '/assets/gallery/8.jpg',
       height: 'h-48'
     }
   ];
@@ -97,7 +97,7 @@ const SocialFeedSection = () => {
           {/* Card 1 */}
           <div className="bg-gray-200 rounded-lg h-64 overflow-hidden relative group cursor-pointer hover:shadow-lg transition-all duration-300">
             <img
-              src="/src/assets/gallery/1.jpg"
+              src="/assets/gallery/1.jpg"
               alt="Social post 1"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
@@ -117,7 +117,7 @@ const SocialFeedSection = () => {
           {/* Card 2 */}
           <div className="bg-gray-200 rounded-lg h-64 overflow-hidden relative group cursor-pointer hover:shadow-lg transition-all duration-300">
             <img
-              src="/src/assets/gallery/2.jpg"
+              src="/assets/gallery/2.jpg"
               alt="Social post 2"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
@@ -137,7 +137,7 @@ const SocialFeedSection = () => {
           {/* Card 3 */}
           <div className="bg-gray-200 rounded-lg h-64 overflow-hidden relative group cursor-pointer hover:shadow-lg transition-all duration-300">
             <img
-              src="/src/assets/gallery/3.jpeg"
+              src="/assets/gallery/3.jpeg"
               alt="Social post 3"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
@@ -157,7 +157,7 @@ const SocialFeedSection = () => {
           {/* Card 4 */}
           <div className="bg-gray-200 rounded-lg h-64 overflow-hidden relative group cursor-pointer hover:shadow-lg transition-all duration-300">
             <img
-              src="/src/assets/gallery/4.jpg"
+              src="/assets/gallery/4.jpg"
               alt="Social post 4"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
@@ -177,7 +177,7 @@ const SocialFeedSection = () => {
           {/* Card 5 */}
           <div className="bg-gray-200 rounded-lg h-64 overflow-hidden relative group cursor-pointer hover:shadow-lg transition-all duration-300">
             <img
-              src="/src/assets/gallery/5.jpg"
+              src="/assets/gallery/5.jpg"
               alt="Social post 5"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
@@ -197,7 +197,7 @@ const SocialFeedSection = () => {
           {/* Card 6 */}
           <div className="bg-gray-200 rounded-lg h-64 overflow-hidden relative group cursor-pointer hover:shadow-lg transition-all duration-300">
             <img
-              src="/src/assets/gallery/6.jpeg"
+              src="/assets/gallery/6.jpeg"
               alt="Social post 6"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
@@ -217,7 +217,7 @@ const SocialFeedSection = () => {
           {/* Card 7 */}
           <div className="bg-gray-200 rounded-lg h-64 overflow-hidden relative group cursor-pointer hover:shadow-lg transition-all duration-300">
             <img
-              src="/src/assets/gallery/7.jpeg"
+              src="/assets/gallery/7.jpeg"
               alt="Social post 7"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
@@ -237,7 +237,7 @@ const SocialFeedSection = () => {
           {/* Card 8 */}
           <div className="bg-gray-200 rounded-lg h-64 overflow-hidden relative group cursor-pointer hover:shadow-lg transition-all duration-300">
             <img
-              src="/src/assets/gallery/8.jpg"
+              src="/assets/gallery/8.jpg"
               alt="Social post 8"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />

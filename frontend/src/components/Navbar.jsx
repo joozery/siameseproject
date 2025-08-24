@@ -45,7 +45,7 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <img 
-              src="/src/assets/siameselogo.png" 
+              src="/assets/siameselogo.png" 
               alt="Siamese Filmart" 
               className="w-auto"
               style={{ width: 'var(--brandWidth)', height: 'auto' }}
@@ -54,23 +54,24 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            {menuItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                style={{
-                  color: '#000',
-                  fontFamily: 'Metamorphous',
-                  fontSize: '16px',
-                  fontStyle: 'normal',
-                  fontWeight: '400',
-                  lineHeight: 'normal'
-                }}
-                className="hover:text-gray-600 transition duration-300"
-              >
-                {item.name}
-              </a>
-            ))}
+                    {menuItems.map((item) => (
+          <Link
+            key={item.name}
+            to={item.name === 'FESTIVAL' ? '/festival' : item.href}
+            style={{
+              color: '#000',
+              fontFamily: 'Metamorphous',
+              fontSize: '16px',
+              fontStyle: 'normal',
+              fontWeight: '400',
+              lineHeight: 'normal',
+              textDecoration: 'none'
+            }}
+            className="hover:text-gray-600 transition duration-300"
+          >
+            {item.name}
+          </Link>
+        ))}
             
             {/* Login Button */}
             <Link 
@@ -126,22 +127,23 @@ const Navbar = () => {
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg">
             {menuItems.map((item) => (
-              <a
+              <Link
                 key={item.name}
-                href={item.href}
+                to={item.name === 'FESTIVAL' ? '/festival' : item.href}
                 style={{
                   color: '#000',
                   fontFamily: 'Metamorphous',
                   fontSize: '16px',
                   fontStyle: 'normal',
                   fontWeight: '400',
-                  lineHeight: 'normal'
+                  lineHeight: 'normal',
+                  textDecoration: 'none'
                 }}
                 className="hover:text-gray-600 block px-3 py-2 rounded-md transition duration-300"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
             <Link 
               to="/login"

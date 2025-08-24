@@ -20,7 +20,7 @@ const LatestUpdatesSection = () => {
           {/* Card 1 */}
           <div className="bg-gray-200 rounded-lg h-64 overflow-hidden relative group cursor-pointer">
             <img 
-              src="/src/assets/gallery/1.jpg" 
+                              src="/assets/gallery/1.jpg" 
               alt="Festival Announcement"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
@@ -40,7 +40,7 @@ const LatestUpdatesSection = () => {
           {/* Card 2 */}
           <div className="bg-gray-200 rounded-lg h-64 overflow-hidden relative group cursor-pointer">
             <img 
-              src="/src/assets/gallery/2.jpg" 
+                              src="/assets/gallery/2.jpg" 
               alt="Submission Open"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
@@ -60,7 +60,7 @@ const LatestUpdatesSection = () => {
           {/* Card 3 */}
           <div className="bg-gray-200 rounded-lg h-64 overflow-hidden relative group cursor-pointer">
             <img 
-              src="/src/assets/gallery/3.jpeg" 
+                              src="/assets/gallery/3.jpeg" 
               alt="Industry Partners"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
