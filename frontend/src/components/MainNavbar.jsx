@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import siameseLogo from '../assets/siameselogo.png';
 
 const MainNavbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -47,7 +48,7 @@ const MainNavbar = () => {
             <div className="flex-shrink-0">
               <Link to="/">
                 <img 
-                  src="/assets/siameselogo.png" 
+                  src={siameseLogo} 
                   alt="Siamese Filmart" 
                   className="w-auto cursor-pointer"
                   style={{ width: 'var(--brandWidth)', height: 'auto' }}

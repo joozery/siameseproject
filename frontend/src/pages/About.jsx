@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import siameseLogo from '../assets/siameselogo.png';
 
 const About = () => {
   const aboutMenuItems = [
@@ -138,7 +139,7 @@ const About = () => {
               {/* Logo */}
               <div className="flex items-center justify-center mb-12">
                 <img 
-                  src="/src/assets/siameselogo.png" 
+                  src={siameseLogo} 
                   alt="Siamese Filmart Logo" 
                   className="w-auto h-32 md:h-40"
                   style={{ maxWidth: 'none', objectFit: 'contain' }}

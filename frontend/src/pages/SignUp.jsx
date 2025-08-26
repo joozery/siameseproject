@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import bgLoginImage from '../assets/bglogin.jpg';
+import unionImage from '../assets/Union.png';
 
 const SignUp = () => {
   const [activeTab, setActiveTab] = useState('general');
@@ -301,7 +303,7 @@ const SignUp = () => {
       <div 
         className="hidden lg:block relative flex-1 m-4 rounded-3xl overflow-hidden"
         style={{
-          backgroundImage: `url('/assets/bglogin.jpg')`,
+          backgroundImage: `url(${bgLoginImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
@@ -311,7 +313,7 @@ const SignUp = () => {
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center">
             <img 
-              src="/assets/Union.png" 
+              src={unionImage} 
               alt="Siamese FilmArt Logo" 
               className="w-48 h-auto mx-auto"
             />

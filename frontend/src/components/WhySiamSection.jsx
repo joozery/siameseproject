@@ -1,11 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import bgWhyChooseImage from '../assets/bgwhychoose.png';
+import posterImage from '../assets/poster.jpg';
 
 const WhySiamSection = () => {
   return (
     <section
       className="py-20"
       style={{
-        backgroundImage: `url('/assets/bgwhychoose.png')`,
+        backgroundImage: `url(${bgWhyChooseImage})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
         backgroundPosition: 'center'
@@ -24,7 +27,7 @@ const WhySiamSection = () => {
                   style={{ width: 'var(--posterWidth)', height: 'calc(var(--posterWidth) * 1.25)' }}
                 >
                   <img 
-                    src="/assets/poster.jpg"
+                    src={posterImage}
                     alt="Movie Poster"
                     className="w-full h-full object-cover"
                   />

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import bgSubmitImage from '../assets/bgsubmit.png';
 
 const Festival = () => {
   return (
@@ -213,7 +214,7 @@ const Festival = () => {
       <div 
         className="relative mx-auto w-[1320px] h-[625px] flex-shrink-0 rounded-[15px] overflow-hidden"
         style={{
-          background: `linear-gradient(0deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/assets/bgsubmit.png') lightgray 50% / cover no-repeat`
+          background: `linear-gradient(0deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(${bgSubmitImage}) lightgray 50% / cover no-repeat`
         }}
       >
         {/* Content */}

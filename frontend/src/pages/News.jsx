@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import bgSubmitImage from '../assets/bgsubmit.png';
 
 const News = () => {
   const newsMenuItems = [
@@ -204,7 +205,7 @@ const News = () => {
       <div 
         className="relative h-screen bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'url(/src/assets/bgsubmit.png)'
+          backgroundImage: `url(${bgSubmitImage})`
         }}
       >
         {/* Overlay for better text readability */}

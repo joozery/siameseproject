@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import teeyodImage from '../assets/teeyod.jpg';
 
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -11,7 +13,7 @@ const HeroSection = () => {
                     <section 
                   className="relative h-[95vh] flex items-center bg-cover bg-center bg-no-repeat"
                   style={{
-                    backgroundImage: "url('/assets/teeyod.jpg')",
+                    backgroundImage: `url(${teeyodImage})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center'
                   }}
