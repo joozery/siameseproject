@@ -7,6 +7,9 @@ import Login from './pages/Login'
 import SignUp from './pages/SignUp'
 import Festival from './pages/Festival'
 import Market from './pages/Market'
+import Conference from './pages/Conference'
+import News from './pages/News'
+import About from './pages/About'
 import AdminLayout from './components/admin/AdminLayout'
 import AdminDashboard from './pages/admin/AdminDashboard'
 import AdminAgenda from './pages/admin/AdminAgenda'
@@ -53,6 +56,33 @@ function App() {
             <MainNavbar />
             <main className="flex-1">
               <Market />
+            </main>
+            <Footer />
+          </div>
+        } />
+        <Route path="/conference" element={
+          <div className="min-h-screen flex flex-col">
+            <MainNavbar />
+            <main className="flex-1">
+              <Conference />
+            </main>
+            <Footer />
+          </div>
+        } />
+        <Route path="/news" element={
+          <div className="min-h-screen flex flex-col">
+            <MainNavbar />
+            <main className="flex-1">
+              <News />
+            </main>
+            <Footer />
+          </div>
+        } />
+        <Route path="/about" element={
+          <div className="min-h-screen flex flex-col">
+            <MainNavbar />
+            <main className="flex-1">
+              <About />
             </main>
             <Footer />
           </div>
