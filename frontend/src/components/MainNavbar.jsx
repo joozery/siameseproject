@@ -7,7 +7,7 @@ const MainNavbar = () => {
 
   const menuItems = [
     { name: 'FESTIVAL', href: '/festival' },
-    { name: 'MARKET', href: '#market' },
+    { name: 'MARKET', href: '/market' },
     { name: 'PROGRAMS', href: '#programs' },
     { name: 'CONFERENCE', href: '#conference' },
     { name: 'NEWS', href: '#news' },

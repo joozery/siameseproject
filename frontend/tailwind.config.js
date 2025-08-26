@@ -8,6 +8,11 @@ export default {
     extend: {
       fontFamily: {
         'metamorphous': ['Metamorphous', 'serif'],
+        'prompt': ['Prompt', 'sans-serif'],
+        'prompt-light': ['Prompt', 'sans-serif'],
+        'prompt-medium': ['Prompt', 'sans-serif'],
+        'prompt-semibold': ['Prompt', 'sans-serif'],
+        'prompt-bold': ['Prompt', 'sans-serif'],
       },
     },
   },

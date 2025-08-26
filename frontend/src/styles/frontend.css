@@ -1,0 +1,46 @@
+/* Frontend Styles - Using Metamorphous Font */
+@import url('https://fonts.googleapis.com/css2?family=Metamorphous&display=swap');
+
+/* Frontend Font Classes */
+.font-frontend {
+  font-family: 'Metamorphous', serif;
+}
+
+/* Frontend Typography */
+.text-frontend-heading {
+  font-family: 'Metamorphous', serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.text-frontend-body {
+  font-family: 'Metamorphous', serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Frontend Components */
+.frontend-navbar {
+  font-family: 'Metamorphous', serif;
+}
+
+.frontend-button {
+  font-family: 'Metamorphous', serif;
+}
+
+.frontend-title {
+  font-family: 'Metamorphous', serif;
+}
+
+/* Frontend Specific Styles */
+.siamese-logo {
+  font-family: 'Metamorphous', serif;
+}
+
+.festival-title {
+  font-family: 'Metamorphous', serif;
+}
+
+.market-title {
+  font-family: 'Metamorphous', serif;
+}
