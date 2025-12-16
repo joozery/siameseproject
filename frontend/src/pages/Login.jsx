@@ -1,33 +1,50 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import bgLoginImage from '../assets/bglogin.jpg';
 import unionImage from '../assets/Union.png';
+import { authAPI } from '../services/api';
 
 const Login = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: '',
     password: ''
   });
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
+    setError(''); // Clear error when user types
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-    
-    // Simulate API call
-    setTimeout(() => {
+    setError('');
+
+    try {
       console.log('Login attempt:', formData);
+      const response = await authAPI.login(formData.email, formData.password);
+
+      // Save token and user data to localStorage
+      localStorage.setItem('auth_token', response.data.token);
+      localStorage.setItem('admin_user', JSON.stringify(response.data));
+
+      console.log('Login successful:', response.data);
+
+      // Redirect to admin dashboard
+      navigate('/admin');
+    } catch (err) {
+      console.error('Login error:', err);
+      setError(err.message || 'Invalid email or password');
+    } finally {
       setIsLoading(false);
-      // Handle login logic here
-    }, 1500);
+    }
   };
 
   return (
@@ -37,13 +54,13 @@ const Login = () => {
         <div className="mx-auto w-full max-w-sm lg:w-96">
           {/* Header */}
           <div>
-            <h2 
+            <h2
               className="text-3xl font-bold text-gray-900 mb-2"
               style={{ fontFamily: 'Futura' }}
             >
               LOG IN
             </h2>
-            <p 
+            <p
               className="text-sm text-gray-600 mb-8"
               style={{ fontFamily: 'Futura' }}
             >
@@ -51,6 +68,15 @@ const Login = () => {
             </p>
             <div className="w-full h-px bg-gray-300 mb-8"></div>
           </div>
+
+          {/* Error Message */}
+          {error && (
+            <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-md">
+              <p className="text-sm text-red-600" style={{ fontFamily: 'Futura' }}>
+                {error}
+              </p>
+            </div>
+          )}
 
           {/* Login Form */}
           <form className="space-y-6" onSubmit={handleSubmit}>
@@ -111,8 +137,8 @@ const Login = () => {
                   type="checkbox"
                   className="h-4 w-4 text-yellow-600 focus:ring-yellow-500 border-gray-300 rounded"
                 />
-                <label 
-                  htmlFor="remember-me" 
+                <label
+                  htmlFor="remember-me"
                   className="ml-2 block text-sm text-gray-900"
                   style={{ fontFamily: 'Futura' }}
                 >
@@ -160,7 +186,7 @@ const Login = () => {
 
             {/* Sign up link */}
             <div className="text-center">
-              <span 
+              <span
                 className="text-sm text-gray-600"
                 style={{ fontFamily: 'Futura' }}
               >
@@ -179,7 +205,7 @@ const Login = () => {
       </div>
 
       {/* Right Side - Background Image with Logo */}
-      <div 
+      <div
         className="hidden lg:block relative flex-1 m-4 rounded-3xl overflow-hidden"
         style={{
           backgroundImage: `url(${bgLoginImage})`,
@@ -191,9 +217,9 @@ const Login = () => {
         {/* Logo Overlay */}
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center">
-            <img 
-              src={unionImage} 
-              alt="Siamese FilmArt Logo" 
+            <img
+              src={unionImage}
+              alt="Siamese FilmArt Logo"
               className="w-48 h-auto mx-auto"
             />
           </div>

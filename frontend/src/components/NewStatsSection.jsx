@@ -17,11 +17,11 @@ const NewStatsSection = () => {
           setIsVisible(true);
           // Start counter animation
           const targets = {
-            attendees: 15000,
-            countries: 40,
-            pavilions: 10,
-            speakers: 100,
-            exhibitors: 150
+            attendees: 6000,
+            countries: 25,
+            pavilions: 100,
+            speakers: 50,
+            exhibitors: 100
           };
 
           const duration = 2000; // 2 seconds
@@ -32,7 +32,7 @@ const NewStatsSection = () => {
           const interval = setInterval(() => {
             currentStep++;
             const progress = currentStep / steps;
-            
+
             setCounters({
               attendees: Math.floor(targets.attendees * progress),
               countries: Math.floor(targets.countries * progress),
@@ -65,10 +65,10 @@ const NewStatsSection = () => {
   }, []);
   const stats = [
     { number: `${counters.attendees.toLocaleString()}+`, label: 'Attendees' },
-    { number: `${counters.countries}+`, label: 'Countries' },
-    { number: `${counters.pavilions}+`, label: 'Country Pavilions' },
+    { number: `${counters.countries}+`, label: 'Represented Countries' },
+    { number: `${counters.pavilions}+`, label: 'Projects' },
     { number: `${counters.speakers}+`, label: 'Speakers' },
-    { number: `${counters.exhibitors}+`, label: 'Exhibitors' }
+    { number: `${counters.exhibitors}+`, label: 'Student Buyers' }
   ];
 
   return (
@@ -76,14 +76,13 @@ const NewStatsSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-wrap justify-center items-center space-x-8 lg:space-x-12">
           {stats.map((stat, index) => (
-            <div 
-              key={index} 
-              className={`flex items-center transition-all duration-1000 ease-out delay-${index * 200} ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
+            <div
+              key={index}
+              className={`flex items-center transition-all duration-1000 ease-out delay-${index * 200} ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
             >
               <div className="text-center">
-                <div 
+                <div
                   className="mb-2"
                   style={{
                     color: '#98805F',
@@ -95,7 +94,7 @@ const NewStatsSection = () => {
                 >
                   {stat.number}
                 </div>
-                <div 
+                <div
                   className="text-center"
                   style={{
                     color: '#000',
@@ -109,10 +108,9 @@ const NewStatsSection = () => {
                 </div>
               </div>
               {index < stats.length - 1 && (
-                <div 
-                  className={`hidden md:block w-px h-16 mx-8 transition-all duration-1000 ease-out delay-${(index + 1) * 200} ${
-                    isVisible ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0'
-                  }`}
+                <div
+                  className={`hidden md:block w-px h-16 mx-8 transition-all duration-1000 ease-out delay-${(index + 1) * 200} ${isVisible ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0'
+                    }`}
                   style={{
                     backgroundColor: '#F9C712'
                   }}

@@ -18,16 +18,16 @@ const MainNavbar = () => {
   return (
     <div className="fixed top-0 left-0 right-0 z-50">
       {/* Yellow strip */}
-      <div 
+      <div
         style={{
           height: '10px',
           alignSelf: 'stretch',
-          background: 'var(--mainyell1, #F9C712)'
+          background: 'linear-gradient(90deg, #FE8C00 0%, #F83600 100%)'
         }}
       ></div>
-      
+
       {/* Main navbar */}
-      <nav 
+      <nav
         style={{
           display: 'flex',
           height: '85px',
@@ -47,9 +47,9 @@ const MainNavbar = () => {
             {/* Logo */}
             <div className="flex-shrink-0">
               <Link to="/">
-                <img 
-                  src={siameseLogo} 
-                  alt="Siamese Filmart" 
+                <img
+                  src={siameseLogo}
+                  alt="Siamese Filmart"
                   className="w-auto cursor-pointer"
                   style={{ width: 'var(--brandWidth)', height: 'auto' }}
                 />
@@ -76,9 +76,9 @@ const MainNavbar = () => {
                   {item.name}
                 </Link>
               ))}
-              
+
               {/* Login Button */}
-              <Link 
+              <Link
                 to="/login"
                 className="border-2 border-yellow-400 text-black hover:bg-yellow-400 hover:text-black transition duration-300"
                 style={{
@@ -149,7 +149,7 @@ const MainNavbar = () => {
                   {item.name}
                 </Link>
               ))}
-              <Link 
+              <Link
                 to="/login"
                 className="w-full text-center border-2 border-yellow-400 text-black hover:bg-yellow-400 hover:text-black transition duration-300 mt-2"
                 style={{

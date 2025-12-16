@@ -1,18 +1,23 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { 
-  HiHome, 
-  HiCalendar, 
-  HiMicrophone, 
-  HiLightningBolt, 
-  HiEye, 
-  HiUsers, 
-  HiChartBar, 
-  HiVideoCamera, 
+import {
+  HiHome,
+  HiCalendar,
+  HiMicrophone,
+  HiLightningBolt,
+  HiEye,
+  HiUsers,
+  HiChartBar,
+  HiVideoCamera,
   HiBookOpen,
   HiTicket,
+  HiPhotograph,
+  HiStar,
+  HiViewGrid,
+  HiNewspaper,
   HiChevronLeft,
-  HiChevronRight
+  HiChevronRight,
+  HiInbox
 } from 'react-icons/hi';
 
 const AdminSidebar = ({ collapsed = false, onToggle }) => {
@@ -28,67 +33,46 @@ const AdminSidebar = ({ collapsed = false, onToggle }) => {
       icon: HiHome
     },
     {
-      id: 'agenda',
-      title: 'กำหนดการ',
-      description: 'จัดการกำหนดการ SIAMESE FILMART',
-      path: '/admin/agenda',
-      icon: HiCalendar
+      id: 'hero-slides',
+      title: 'Hero Slides',
+      description: 'จัดการสไลด์หน้าแรก',
+      path: '/admin/hero-slides',
+      icon: HiViewGrid
     },
     {
-      id: 'speakers',
-      title: 'ผู้บรรยาย',
-      description: 'จัดการข้อมูลผู้บรรยาย',
-      path: '/admin/speakers',
-      icon: HiMicrophone
+      id: 'updates',
+      title: 'Latest Updates',
+      description: 'จัดการบทความและข่าวสาร',
+      path: '/admin/updates',
+      icon: HiNewspaper
     },
     {
-      id: 'creative-works',
-      title: 'ผลงานสร้างสรรค์',
-      description: 'จัดการผลงานสร้างสรรค์ SIAMESE FILMART',
-      path: '/admin/creative-works',
-      icon: HiLightningBolt
+      id: 'gallery',
+      title: 'Gallery',
+      description: 'จัดการรูปภาพ',
+      path: '/admin/gallery',
+      icon: HiPhotograph
     },
     {
-      id: 'exhibition',
-      title: 'นิทรรศการ',
-      description: 'จัดการ Live Exhibition และพื้นที่สาธิต',
-      path: '/admin/exhibition',
-      icon: HiEye
+      id: 'sponsors',
+      title: 'ผู้สนับสนุน',
+      description: 'จัดการผู้สนับสนุน',
+      path: '/admin/sponsors',
+      icon: HiStar
     },
     {
-      id: 'participants',
-      title: 'ผู้เข้าร่วม',
-      description: 'เช็ครายชื่อผู้เข้าร่วมงาน',
-      path: '/admin/participants',
+      id: 'inquiries',
+      title: 'Inquiries',
+      description: 'จัดการข้อความติดต่อ',
+      path: '/admin/inquiries',
+      icon: HiInbox
+    },
+    {
+      id: 'management',
+      title: 'จัดการผู้ดูแล',
+      description: 'จัดการบัญชีผู้ดูแลระบบ',
+      path: '/admin/management',
       icon: HiUsers
-    },
-    {
-      id: 'analytics',
-      title: 'สถิติเว็บไซต์',
-      description: 'สถิติการเข้าชมเว็บ SIAMESE FILMART',
-      path: '/admin/analytics',
-      icon: HiChartBar
-    },
-    {
-      id: 'multimedia',
-      title: 'สื่อมัลติมีเดีย',
-      description: 'จัดการวิดีโอและภาพถ่าย',
-      path: '/admin/multimedia',
-      icon: HiVideoCamera
-    },
-    {
-      id: 'ebook',
-      title: 'E-Book',
-      description: 'จัดการผลงาน E-Book SIAMESE FILMART',
-      path: '/admin/ebook',
-      icon: HiBookOpen
-    },
-    {
-      id: 'eticket',
-      title: 'E-Ticket',
-      description: 'จัดการตั๋วอิเล็กทรอนิกส์',
-      path: '/admin/eticket',
-      icon: HiTicket
     }
   ];
 
@@ -101,35 +85,33 @@ const AdminSidebar = ({ collapsed = false, onToggle }) => {
   };
 
   return (
-    <aside className={`bg-white shadow-lg h-screen flex flex-col font-prompt relative ${
-      collapsed ? 'w-20' : 'w-80'
-    }`}>
+    <aside className={`bg-gradient-to-b from-white to-gray-50 shadow-xl h-screen flex flex-col font-prompt relative transition-all duration-300 border-r border-gray-200 ${collapsed ? 'w-20' : 'w-80'
+      }`}>
       {/* Toggle Button */}
-      <div className="absolute -right-3 top-6 z-10">
+      <div className="absolute -right-3 top-6 z-50">
         <button
           onClick={onToggle}
-          className="w-6 h-6 bg-amber-700 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-amber-800 transition-colors duration-200"
+          className="w-7 h-7 bg-gradient-to-br from-amber-600 to-amber-700 text-white rounded-full flex items-center justify-center shadow-xl hover:shadow-2xl hover:scale-110 transition-all duration-200 ring-2 ring-white"
         >
           {collapsed ? (
-            <HiChevronRight className="h-3 w-3" />
+            <HiChevronRight className="h-4 w-4" />
           ) : (
-            <HiChevronLeft className="h-3 w-3" />
+            <HiChevronLeft className="h-4 w-4" />
           )}
         </button>
       </div>
 
       {/* Logo Section */}
-      <div className={`border-b flex-shrink-0 ${collapsed ? 'p-4' : 'p-6'}`}>
+      <div className={`border-b border-gray-200 flex-shrink-0 bg-white ${collapsed ? 'p-4' : 'p-6'}`}>
         <div className={`flex items-center ${collapsed ? 'justify-center' : 'space-x-3'}`}>
-          <div className={`bg-amber-700 rounded-lg flex items-center justify-center ${
-            collapsed ? 'w-12 h-12' : 'w-10 h-10'
-          }`}>
-            <span className="text-white font-bold text-lg">S</span>
+          <div className={`bg-gradient-to-br from-amber-600 to-amber-700 rounded-xl flex items-center justify-center shadow-lg ${collapsed ? 'w-12 h-12' : 'w-12 h-12'
+            }`}>
+            <span className="text-white font-bold text-xl">S</span>
           </div>
           {!collapsed && (
             <div>
-              <h1 className="text-xl font-bold text-gray-900 font-prompt">SIAMESE FILMART</h1>
-              <p className="text-sm text-gray-500 font-prompt">ระบบจัดการข้อมูล</p>
+              <h1 className="text-lg font-bold text-gray-900 font-prompt">SIAMESE FILMART</h1>
+              <p className="text-xs text-gray-500 font-prompt">ระบบจัดการข้อมูล</p>
             </div>
           )}
         </div>
@@ -137,40 +119,36 @@ const AdminSidebar = ({ collapsed = false, onToggle }) => {
 
       {/* Navigation Menu */}
       <div className="flex-1 overflow-y-auto sidebar-scrollbar">
-        <nav className={`space-y-2 ${collapsed ? 'p-3' : 'p-4'}`}>
+        <nav className={`space-y-1 ${collapsed ? 'p-2' : 'p-3'}`}>
           {Array.isArray(menuItems) && menuItems.map((item) => {
             const Icon = item.icon;
             const isActive = isActivePage(item);
-            
+
             return (
               <button
                 key={item.id}
-                className={`w-full justify-start h-auto font-prompt transition-all duration-200 ${
-                  collapsed 
-                    ? 'p-2 h-10 w-10 rounded-lg mx-auto' 
-                    : 'p-3 text-sm h-auto'
-                } ${
-                  isActive 
-                    ? "bg-amber-50 text-amber-700 border-amber-200 shadow-md border" 
-                    : "hover:bg-gray-50 hover:shadow-sm"
-                }`}
+                className={`group w-full justify-start font-prompt transition-all duration-200 ${collapsed
+                  ? 'p-3 rounded-xl mx-auto flex justify-center'
+                  : 'p-3.5 rounded-xl'
+                  } ${isActive
+                    ? "bg-gradient-to-r from-amber-500 to-amber-600 text-white shadow-lg shadow-amber-200"
+                    : "hover:bg-white hover:shadow-md text-gray-700"
+                  }`}
                 onClick={() => handleMenuClick(item)}
                 title={collapsed ? item.title : ''}
               >
                 <div className={`flex items-start ${collapsed ? 'justify-center' : 'space-x-3'}`}>
-                  <Icon className={`${
-                    collapsed ? 'h-5 w-5' : 'h-4 w-4 mt-0.5 flex-shrink-0'
-                  } ${
-                    isActive ? "text-amber-600" : "text-gray-500"
-                  }`} />
+                  <Icon className={`${collapsed ? 'h-6 w-6' : 'h-5 w-5 mt-0.5 flex-shrink-0'
+                    } ${isActive ? "text-white" : "text-gray-600 group-hover:text-amber-600"
+                    } transition-all duration-200 ${!isActive && 'group-hover:scale-110'}`} />
                   {!collapsed && (
                     <div className="text-left flex-1 min-w-0">
-                      <div className={`font-medium font-prompt ${
-                        isActive ? "text-amber-700" : "text-gray-900"
-                      }`}>
+                      <div className={`font-semibold font-prompt text-sm ${isActive ? "text-white" : "text-gray-900 group-hover:text-amber-700"
+                        }`}>
                         {item.title}
                       </div>
-                      <div className="text-xs text-gray-500 font-prompt mt-0.5 leading-tight">
+                      <div className={`text-xs font-prompt mt-0.5 leading-tight ${isActive ? "text-amber-100" : "text-gray-500 group-hover:text-amber-600"
+                        }`}>
                         {item.description}
                       </div>
                     </div>
@@ -183,17 +161,16 @@ const AdminSidebar = ({ collapsed = false, onToggle }) => {
       </div>
 
       {/* Admin User Section */}
-      <div className={`border-t bg-gray-50 flex-shrink-0 ${collapsed ? 'p-4' : 'p-4'}`}>
+      <div className={`border-t border-gray-200 bg-gradient-to-r from-amber-50 to-orange-50 flex-shrink-0 ${collapsed ? 'p-3' : 'p-4'}`}>
         <div className={`flex items-center ${collapsed ? 'justify-center' : 'space-x-3'}`}>
-          <div className={`bg-amber-700 rounded-full flex items-center justify-center ${
-            collapsed ? 'w-12 h-12' : 'w-10 h-10'
-          }`}>
+          <div className={`bg-gradient-to-br from-amber-600 to-amber-700 rounded-full flex items-center justify-center shadow-lg ${collapsed ? 'w-12 h-12' : 'w-10 h-10'
+            }`}>
             <HiUsers className={`${collapsed ? 'h-6 w-6' : 'h-5 w-5'} text-white`} />
           </div>
           {!collapsed && (
             <div>
-              <div className="font-medium text-gray-900 font-prompt">ผู้ดูแลระบบ</div>
-              <div className="text-sm text-gray-500 font-prompt">SIAMESE FILMART Manager</div>
+              <div className="font-semibold text-gray-900 font-prompt text-sm">ผู้ดูแลระบบ</div>
+              <div className="text-xs text-gray-600 font-prompt">SIAMESE Manager</div>
             </div>
           )}
         </div>

@@ -1,8 +1,49 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { toast } from 'sonner';
+import { inquiryAPI } from '../services/api';
 import bgFooter from '../assets/bgfooter.png';
 import siameseLogo from '../assets/siameselogo.png';
 
 const Footer = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    title: '',
+    message: ''
+  });
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!formData.name || !formData.email || !formData.title || !formData.message) {
+      toast.error('กรุณากรอกข้อมูลให้ครบถ้วน');
+      return;
+    }
+
+    try {
+      setSubmitting(true);
+      await inquiryAPI.create(formData);
+      toast.success('ส่งข้อความสำเร็จ! เราจะติดต่อกลับโดยเร็วที่สุด');
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        title: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Submission error:', error);
+      toast.error('ส่งข้อความไม่สำเร็จ กรุณาลองใหม่อีกครั้ง');
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
   return (
     <footer
       className="text-black"
@@ -45,39 +86,55 @@ const Footer = () => {
               </div>
               <div className="bg-white rounded-lg shadow-md p-6 md:p-8">
                 <h3 className="text-lg md:text-xl font-normal mb-4">General Inquiry</h3>
-                <form className="space-y-3">
+                <form className="space-y-3" onSubmit={handleSubmit}>
                   <input
                     type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
                     placeholder="Name"
                     className="w-full bg-transparent border-b border-gray-300 focus:border-black outline-none py-2"
                   />
                   <input
                     type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     placeholder="Email"
                     className="w-full bg-transparent border-b border-gray-300 focus:border-black outline-none py-2"
                   />
                   <input
                     type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
                     placeholder="Phone Number"
                     className="w-full bg-transparent border-b border-gray-300 focus:border-black outline-none py-2"
                   />
                   <input
                     type="text"
+                    name="title"
+                    value={formData.title}
+                    onChange={handleChange}
                     placeholder="Title"
                     className="w-full bg-transparent border-b border-gray-300 focus:border-black outline-none py-2"
                   />
                   <textarea
                     rows="3"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
                     placeholder="Message"
                     className="w-full bg-transparent border-b border-gray-300 focus:border-black outline-none py-2 resize-none"
                   />
                   <div className="flex justify-end">
                     <button
                       type="submit"
-                      className="text-white px-4 py-1 rounded"
+                      disabled={submitting}
+                      className="text-white px-4 py-1 rounded disabled:opacity-50 disabled:cursor-not-allowed"
                       style={{ background: '#4D341E' }}
                     >
-                      SEND MESSAGE
+                      {submitting ? 'SENDING...' : 'SEND MESSAGE'}
                     </button>
                   </div>
                 </form>
@@ -86,17 +143,17 @@ const Footer = () => {
               <div className="mt-6 flex items-center space-x-4 flex-nowrap">
                 <a href="#" aria-label="facebook" className="hover:opacity-75 transition">
                   <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M22 12.06C22 6.48 17.52 2 11.94 2S2 6.48 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.41c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.23.2 2.23.2v2.45h-1.25c-1.23 0-1.61.76-1.61 1.54v1.86h2.74l-.44 2.91h-2.3V22c4.78-.76 8.44-4.92 8.44-9.94z"/>
+                    <path d="M22 12.06C22 6.48 17.52 2 11.94 2S2 6.48 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.41c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.23.2 2.23.2v2.45h-1.25c-1.23 0-1.61.76-1.61 1.54v1.86h2.74l-.44 2.91h-2.3V22c4.78-.76 8.44-4.92 8.44-9.94z" />
                   </svg>
                 </a>
                 <a href="#" aria-label="instagram" className="hover:opacity-75 transition">
                   <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm5.5-.75a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0z"/>
+                    <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm5.5-.75a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0z" />
                   </svg>
                 </a>
                 <a href="#" aria-label="linkedin" className="hover:opacity-75 transition">
                   <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M6.94 6.5a1.94 1.94 0 11-3.88 0 1.94 1.94 0 013.88 0zM3.5 8.5h3v12h-3v-12zm6 0h2.87v1.64h.04c.4-.76 1.37-1.56 2.83-1.56 3.03 0 3.59 1.99 3.59 4.58V20.5h-3v-5.35c0-1.27-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.81v5.44h-3v-12z"/>
+                    <path d="M6.94 6.5a1.94 1.94 0 11-3.88 0 1.94 1.94 0 013.88 0zM3.5 8.5h3v12h-3v-12zm6 0h2.87v1.64h.04c.4-.76 1.37-1.56 2.83-1.56 3.03 0 3.59 1.99 3.59 4.58V20.5h-3v-5.35c0-1.27-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.81v5.44h-3v-12z" />
                   </svg>
                 </a>
                 <span className="text-sm whitespace-nowrap">

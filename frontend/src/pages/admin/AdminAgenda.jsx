@@ -57,117 +57,117 @@ const AdminAgenda = () => {
   };
 
   return (
-    <div className="space-y-6 font-prompt">
+    <div className="space-y-4 font-prompt">
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">จัดการกำหนดการ</h1>
-          <p className="text-gray-600 mt-2">จัดการกำหนดการและกิจกรรมของ SIAMESE FILMART</p>
+          <h1 className="text-2xl font-bold text-gray-900">จัดการกำหนดการ</h1>
+          <p className="text-sm text-gray-600 mt-1">จัดการกำหนดการและกิจกรรมของ SIAMESE FILMART</p>
         </div>
         <button
           onClick={() => setShowAddModal(true)}
-          className="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-lg flex items-center space-x-2 transition-colors duration-200"
+          className="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-lg flex items-center space-x-2 transition-colors duration-200 text-sm"
         >
-          <HiPlus className="h-5 w-5" />
+          <HiPlus className="h-4 w-4" />
           <span>เพิ่มกิจกรรม</span>
         </button>
       </div>
 
       {/* Stats Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-        <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-600">กิจกรรมทั้งหมด</p>
-              <p className="text-2xl font-bold text-gray-900">{events.length}</p>
+              <p className="text-xs font-medium text-gray-600">กิจกรรมทั้งหมด</p>
+              <p className="text-xl font-bold text-gray-900">{events.length}</p>
             </div>
-            <div className="p-3 bg-blue-100 rounded-lg">
-              <HiCalendar className="h-6 w-6 text-blue-600" />
+            <div className="p-2 bg-blue-100 rounded-lg">
+              <HiCalendar className="h-5 w-5 text-blue-600" />
             </div>
           </div>
         </div>
 
-        <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+        <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-600">กำลังจะมาถึง</p>
-              <p className="text-2xl font-bold text-gray-900">
+              <p className="text-xs font-medium text-gray-600">กำลังจะมาถึง</p>
+              <p className="text-xl font-bold text-gray-900">
                 {events.filter(e => e.status === 'upcoming').length}
               </p>
             </div>
-            <div className="p-3 bg-green-100 rounded-lg">
-              <HiClock className="h-6 w-6 text-green-600" />
+            <div className="p-2 bg-green-100 rounded-lg">
+              <HiClock className="h-5 w-5 text-green-600" />
             </div>
           </div>
         </div>
 
-        <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+        <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-600">กำลังดำเนินการ</p>
-              <p className="text-2xl font-bold text-gray-900">
+              <p className="text-xs font-medium text-gray-600">กำลังดำเนินการ</p>
+              <p className="text-xl font-bold text-gray-900">
                 {events.filter(e => e.status === 'ongoing').length}
               </p>
             </div>
-            <div className="p-3 bg-yellow-100 rounded-lg">
-              <HiClock className="h-6 w-6 text-yellow-600" />
+            <div className="p-2 bg-yellow-100 rounded-lg">
+              <HiClock className="h-5 w-5 text-yellow-600" />
             </div>
           </div>
         </div>
 
-        <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+        <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-600">เสร็จสิ้น</p>
-              <p className="text-2xl font-bold text-gray-900">
+              <p className="text-xs font-medium text-gray-600">เสร็จสิ้น</p>
+              <p className="text-xl font-bold text-gray-900">
                 {events.filter(e => e.status === 'completed').length}
               </p>
             </div>
-            <div className="p-3 bg-gray-100 rounded-lg">
-              <HiCalendar className="h-6 w-6 text-gray-600" />
+            <div className="p-2 bg-gray-100 rounded-lg">
+              <HiCalendar className="h-5 w-5 text-gray-600" />
             </div>
           </div>
         </div>
       </div>
 
       {/* Events List */}
-      <div className="bg-white rounded-xl shadow-sm border border-gray-200">
-        <div className="p-6 border-b border-gray-200">
-          <h2 className="text-xl font-bold text-gray-900">รายการกิจกรรม</h2>
+      <div className="bg-white rounded-lg shadow-sm border border-gray-200">
+        <div className="p-4 border-b border-gray-200">
+          <h2 className="text-lg font-bold text-gray-900">รายการกิจกรรม</h2>
         </div>
         <div className="divide-y divide-gray-200">
           {events.map((event) => (
-            <div key={event.id} className="p-6 hover:bg-gray-50 transition-colors duration-200">
+            <div key={event.id} className="p-4 hover:bg-gray-50 transition-colors duration-200">
               <div className="flex items-start justify-between">
                 <div className="flex-1">
-                  <div className="flex items-center space-x-3 mb-2">
-                    <h3 className="text-lg font-semibold text-gray-900">{event.title}</h3>
-                    <span className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(event.status)}`}>
+                  <div className="flex items-center space-x-2 mb-2">
+                    <h3 className="text-base font-semibold text-gray-900">{event.title}</h3>
+                    <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${getStatusColor(event.status)}`}>
                       {getStatusText(event.status)}
                     </span>
                   </div>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-3">
-                    <div className="flex items-center space-x-2 text-gray-600">
+
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-2">
+                    <div className="flex items-center space-x-2 text-gray-600 text-sm">
                       <HiCalendar className="h-4 w-4" />
                       <span>{new Date(event.date).toLocaleDateString('th-TH')}</span>
                     </div>
-                    <div className="flex items-center space-x-2 text-gray-600">
+                    <div className="flex items-center space-x-2 text-gray-600 text-sm">
                       <HiClock className="h-4 w-4" />
                       <span>{event.time}</span>
                     </div>
-                                         <div className="flex items-center space-x-2 text-gray-600">
-                       <HiLocationMarker className="h-4 w-4" />
-                       <span>{event.location}</span>
-                     </div>
+                    <div className="flex items-center space-x-2 text-gray-600 text-sm">
+                      <HiLocationMarker className="h-4 w-4" />
+                      <span>{event.location}</span>
+                    </div>
                   </div>
 
-                  <div className="flex items-center space-x-2 text-gray-600 mb-3">
+                  <div className="flex items-center space-x-2 text-gray-600 mb-2 text-sm">
                     <HiUser className="h-4 w-4" />
                     <span>ผู้บรรยาย: {event.speaker}</span>
                   </div>
 
-                  <p className="text-gray-600">{event.description}</p>
+                  <p className="text-sm text-gray-600">{event.description}</p>
                 </div>
 
                 <div className="flex items-center space-x-2 ml-4">
@@ -201,7 +201,7 @@ const AdminAgenda = () => {
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
               {editingEvent ? 'แก้ไขกิจกรรม' : 'เพิ่มกิจกรรมใหม่'}
             </h2>
-            
+
             <div className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">ชื่อกิจกรรม</label>
@@ -211,7 +211,7 @@ const AdminAgenda = () => {
                   placeholder="ชื่อกิจกรรม"
                 />
               </div>
-              
+
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">วันที่</label>
@@ -228,7 +228,7 @@ const AdminAgenda = () => {
                   />
                 </div>
               </div>
-              
+
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">สถานที่</label>
                 <input
@@ -237,7 +237,7 @@ const AdminAgenda = () => {
                   placeholder="สถานที่จัดงาน"
                 />
               </div>
-              
+
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">ผู้บรรยาย</label>
                 <input
@@ -246,7 +246,7 @@ const AdminAgenda = () => {
                   placeholder="ชื่อผู้บรรยาย"
                 />
               </div>
-              
+
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">รายละเอียด</label>
                 <textarea
@@ -256,7 +256,7 @@ const AdminAgenda = () => {
                 />
               </div>
             </div>
-            
+
             <div className="flex items-center justify-end space-x-3 mt-6">
               <button
                 onClick={() => {
