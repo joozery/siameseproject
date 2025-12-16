@@ -2,7 +2,7 @@
 
 [build]
   # Install dependencies and build
-  command = "npm install && npm run build"
+  command = "npm ci && npm run build"
   publish = "dist"
 
 # Environment variables for production
