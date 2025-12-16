@@ -1,11 +1,23 @@
-[build]
-  publish = "dist"
-  command = "npm run build"
+# Netlify configuration file
 
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Environment variables for production
+[context.production.environment]
+  VITE_API_URL = "https://siam.devwooyou.space/api"
+
+# Environment variables for deploy previews
+[context.deploy-preview.environment]
+  VITE_API_URL = "https://siam.devwooyou.space/api"
+
+# Environment variables for branch deploys
+[context.branch-deploy.environment]
+  VITE_API_URL = "https://siam.devwooyou.space/api"
+
+# Redirect rules (if needed)
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-
-[build.environment]
-  NODE_VERSION = "18"
