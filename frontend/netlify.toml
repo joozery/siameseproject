@@ -1,8 +1,8 @@
 # Netlify configuration file
 
 [build]
-  # Clean install dependencies and build
-  command = "rm -rf node_modules && npm ci && npm run build"
+  # Clean install ALL dependencies (including dev) and build
+  command = "rm -rf node_modules && npm ci --include=dev && npm run build"
   publish = "dist"
 
 # Environment variables for production
