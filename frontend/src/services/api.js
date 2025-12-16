@@ -1,5 +1,8 @@
 // API Base URL
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001/api';
+const isProduction = import.meta.env.PROD || (typeof window !== 'undefined' && window.location.hostname !== 'localhost');
+const API_URL = isProduction 
+  ? 'https://siam.devwooyou.space/api' 
+  : (import.meta.env.VITE_API_URL || 'http://localhost:5001/api');
 
 // Get token from localStorage
 const getToken = () => {
