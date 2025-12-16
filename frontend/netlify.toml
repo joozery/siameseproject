@@ -1,7 +1,8 @@
 # Netlify configuration file
 
 [build]
-  command = "npm run build"
+  # Install dependencies and build
+  command = "npm install && npm run build"
   publish = "dist"
 
 # Environment variables for production
@@ -16,7 +17,7 @@
 [context.branch-deploy.environment]
   VITE_API_URL = "https://siam.devwooyou.space/api"
 
-# Redirect rules (if needed)
+# Redirect rules for SPA routing
 [[redirects]]
   from = "/*"
   to = "/index.html"
