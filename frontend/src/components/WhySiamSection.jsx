@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { HiChevronLeft, HiChevronRight } from 'react-icons/hi';
 import { galleryAPI } from '../services/api';
 import bgWhyChooseImage from '../assets/bgwhychoose.png';
-import posterImage from '../assets/poster.jpg';
+import posterImage from '../assets/Awards.png';
 
 const WhySiamSection = () => {
   const [posters, setPosters] = useState([]);

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { HiChevronLeft, HiChevronRight } from 'react-icons/hi';
 import { heroSlideAPI } from '../services/api';
-import teeyodImage from '../assets/teeyod.jpg';
+import teeyodImage from '../assets/Awards.png';
 
 const HeroSection = () => {
   const [slides, setSlides] = useState([]);
